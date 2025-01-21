@@ -5,7 +5,7 @@ This project aims to [INSERT DESCRIPTION OF PROJECT].
 
 ---
 
-## Features ✨
+## Features 
 - **Feature 1**: Brief description
 - **Feature 2**: Brief description
 - **Feature 3**: Brief description and so on...
