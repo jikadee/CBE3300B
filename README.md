@@ -1,17 +1,37 @@
-# Welcome to CBE3300B 👋 [UNCOMPLETED]
+# CBE3300B Project Repository 
 
-## Overview of [PROJECT TITLE]
-This project aims to [INSERT DESCRIPTION OF PROJECT].
+Welcome to our project repository for **CBE3300B**! This repository is used to manage, collaborate, and share resources for our team project.
 
 ---
 
-## Sections of the Project 📂
-### 1. Introduction
-Detailed information about the project goals.
+## Project Overview: Water Purifier
 
-### 2. Implementation
-Step-by-step details or a general summary.
+[Insert details later.]
 
-### 3. Results
-Share results or key findings.
+---
+
+## Meet the Team
+
+- **[Angelica Dadda]**: adadda@seas.upenn.edu
+- **[Chloe Ng]**: ngchloe@seas.upenn.edu
+- **[Gina Lin]**: ginalin@seas.upenn.edu
+
+Feel free to reach out to us for any inquiries or collaboration opportunities!
+
+---
+
+## 📂 Repository Structure
+
+Here’s what you’ll find in this repository:
+
+[Insert details later.]
+
+---
+
+## 🚀 How to View Our GitHub Page
+
+Our GitHub Page provides an interactive project overview. You can view it here:
+
+🔗 **GitHub Page**: [https://jikadee.github.io/CBE3300B](https://jikadee.github.io/CBE3300B)
+
 
