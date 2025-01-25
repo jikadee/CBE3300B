@@ -20,7 +20,7 @@ Feel free to reach out to us for any inquiries or collaboration opportunities!
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 Here’s what you’ll find in this repository:
 
@@ -28,7 +28,7 @@ Here’s what you’ll find in this repository:
 
 ---
 
-## 🚀 How to View Our GitHub Page
+## How to View Our GitHub Page
 
 Our GitHub Page provides an interactive project overview. You can view it here:
 
