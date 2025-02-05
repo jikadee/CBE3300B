@@ -4,14 +4,14 @@ Welcome to our project repository for **CBE3300B**! This repository is used to m
 
 ---
 
-## Project Overview: Water Purifier
+## Project Overview: Adaptive Water Purifier
 
 [Insert details later.]
 
 ---
 
 ## Meet the Team
-
+**Team Name**: Penn Water Cleaners
 - **[Angelica Dadda]**: adadda@seas.upenn.edu
 - **[Chloe Ng]**: ngchloe@seas.upenn.edu
 - **[Gina Lin]**: ginalin@seas.upenn.edu
