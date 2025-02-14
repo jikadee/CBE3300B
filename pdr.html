@@ -75,7 +75,7 @@
                 <li><strong>Abundant Surface Functional Groups:</strong> Functional groups on the surface of activated carbon can form complexes with metal ions, further facilitating adsorption and improving removal efficiency.</li>
             </ul>
             <p>Given these characteristics, activated carbon serves as an effective adsorbent for removing Zn and other heavy metal contaminants from water sources.</p>
-            <h3>2.1.2 Caveats & Mitigation Strategies</h3>
+            <h4>2.1.2 Caveats & Mitigation Strategies</h4>
             <p>Some functional groups present on activated carbon may deprotonate, altering the conductivity of the solution. Since conductivity measurements will be utilized to monitor heavy metal concentrations, maintaining solution stability is crucial. The solution pH must be maintained below the Point of Zero Charge (PZC) of activated carbon, which is approximately pH 7 for commercially available activated carbon. Keeping the pH below this threshold minimizes deprotonation, thereby preserving the reliability of conductivity-based sensing.</p>
             <p>Another concern is that activated carbon may contain residual minerals from processing, which could leach into the water and interfere with conductivity measurements. To mitigate this issue, thorough rinsing of activated carbon before use is recommended to eliminate residual minerals and ensure more accurate conductivity readings. Proper pre-treatment of the activated carbon ensures that the system’s readings remain reliable and that external factors do not contribute to variations in conductivity measurements.</p>
             <h3>2.2 Model Contaminant</h3>
@@ -88,11 +88,39 @@
         </section>
         <section id="sensor">
             <h2>3. Sensor: TDS Meter</h2>
-            <p>The Total Dissolved Solids (TDS) meter is a critical component...</p>
+            <p>The Total Dissolved Solids (TDS) meter is a critical component in our water purification system, ensuring the removal of dissolved heavy metal ions, particularly zinc and sulfate, from the water. The meter operates by measuring the electrical conductivity of the water, which directly correlates to the concentration of dissolved solids.</p>
+            <h3>3.1 Relevance to Water Purification Process</h3>
+            <p>Our system is designed to purify water that has been intentionally contaminated with zinc sulfate. The purification process involves passing the water through an activated carbon filter, which effectively removes heavy metal ions and other contaminants. The TDS meter plays a crucial role in monitoring this purification process by continuously measuring the water’s conductivity until it reaches an acceptable threshold.</p>
+            <h3>3.2 Operational Principles</h3>
+            <p>The sensor operates based on the following principles:</p>
+            <ul>
+                <li><strong>Input and Output Parameters:</strong> The TDS sensor operates within an input voltage range of 3.3V–5.5V and provides an analog output voltage between 0V and 2.3V, which is read by an Arduino microcontroller.</li>
+                <li><strong>Measurement Mechanism:</strong> The sensor detects changes in electrical conductivity caused by dissolved ions. Higher ion concentrations result in increased conductivity, while a successful purification process should lower conductivity values.</li>
+                <li><strong>Accuracy and Calibration:</strong> The sensor has a measurement accuracy of ±10% Full Scale at 25°C, necessitating calibration to ensure reliable readings.</li>
+            </ul>
+            <h3>3.3 Integration into the System</h3>
+            <ol>
+                <li>Initial Measurement: Before purification, the TDS meter records the baseline conductivity of zinc sulfate-contaminated water.</li>
+                <li>Filtration Process: The water is passed through the activated carbon filter, which absorbs and removes metal ions.</li>
+                <li>Post-Filtration Monitoring: The TDS meter continuously measures conductivity to determine whether ion levels have been sufficiently reduced.</li>
+                <li>Threshold-Based Control: Once the TDS reading falls below the pre-set threshold, the system confirms successful purification.</li>
+            </ol>
         </section>
         <section id="assembly">
             <h2>4. Overall Assembly</h2>
-            <p>The system operates as a closed-loop filtration setup...</p>
+            <p>The water purification system is designed to effectively remove heavy metal ions from contaminated water using activated charcoal as a filtration medium. This system operates as a closed-loop filtration setup, integrating a peristaltic pump, a Total Dissolved Solids (TDS) sensor, and an Arduino-based microcontroller for real-time monitoring and control.</p>
+            <h3>4.1 System Overview</h3>
+            <p>The filtration process follows a cyclic approach where contaminated water enters the top chamber, passes through an activated charcoal filter in the middle section, and is then collected in the bottom chamber, where the TDS sensor measures dissolved solids concentration.</p>
+            <h3>4.2 Components</h3>
+            <ul>
+                <li><strong>Top Chamber:</strong> Serves as the initial reservoir where water is introduced into the system.</li>
+                <li><strong>Filtration Unit:</strong> Houses activated charcoal and facilitates water purification.</li>
+                <li><strong>Bottom Chamber:</strong> Collects filtered water and integrates the TDS sensor for real-time monitoring.</li>
+                <li><strong>Peristaltic Pump:</strong> Ensures controlled and consistent water circulation.</li>
+                <li><strong>Arduino Control System:</strong> Monitors TDS levels and automates the purification process.</li>
+            </ul>
+            <h3>4.3 Circuit Design & Control Mechanisms</h3>
+            <p>The system integrates multiple circuits to facilitate efficient water purification. The TDS sensor measurement circuit determines ZnSO₄ removal by detecting total dissolved solids in the water. The peristaltic pump control circuit manages the water flow rate through the filter, ensuring optimal contact time for effective filtration.</p>
         </section>
         <section id="materials">
             <h2>5. Materials</h2>
