@@ -69,6 +69,7 @@
         <section id="filter">
             <h2>2. Filter and Model Contaminant</h2>
             <h3>2.1 Filter: Activated Carbon</h3>
+            <h4>2.1.1 Advantages of Activated Carbon</h4>
             <p>Activated carbon is selected as the filtration material due to its exceptional adsorption properties:</p>
             <ul>
                 <li><strong>Large Surface Area:</strong> The porous nature of activated carbon allows heavy metal ions to be deposited within its pores, enhancing its adsorption capability.</li>
@@ -76,8 +77,8 @@
             </ul>
             <p>Given these characteristics, activated carbon serves as an effective adsorbent for removing Zn and other heavy metal contaminants from water sources.</p>
             <h4>2.1.2 Caveats & Mitigation Strategies</h4>
-            <p>Some functional groups present on activated carbon may deprotonate, altering the conductivity of the solution. Since conductivity measurements will be utilized to monitor heavy metal concentrations, maintaining solution stability is crucial. The solution pH must be maintained below the Point of Zero Charge (PZC) of activated carbon, which is approximately pH 7 for commercially available activated carbon. Keeping the pH below this threshold minimizes deprotonation, thereby preserving the reliability of conductivity-based sensing.</p>
-            <p>Another concern is that activated carbon may contain residual minerals from processing, which could leach into the water and interfere with conductivity measurements. To mitigate this issue, thorough rinsing of activated carbon before use is recommended to eliminate residual minerals and ensure more accurate conductivity readings. Proper pre-treatment of the activated carbon ensures that the system’s readings remain reliable and that external factors do not contribute to variations in conductivity measurements.</p>
+            <p>Some functional groups present on activated carbon may deprotonate, altering the conductivity of the solution. Since conductivity measurements will be utilized to monitor heavy metal concentrations, maintaining solution stability is crucial. The solution pH must be maintained below the Point of Zero Charge (PZC) of activated carbon, which is approximately pH 7 for commercially available activated carbon (PMC, 2022) [1]. Keeping the pH below this threshold minimizes deprotonation, thereby preserving the reliability of conductivity-based sensing. Ensuring a stable pH environment is essential for accurate and consistent measurement of heavy metal removal efficiency.</p>
+            <p>Another concern is that activated carbon may contain residual minerals from processing, which could leach into the water and interfere with conductivity measurements. To mitigate this issue, thorough rinsing of activated carbon before use is recommended to eliminate residual minerals and ensure more accurate conductivity readings (ResearchGate, 2022) [2]. Proper pre-treatment of the activated carbon ensures that the system’s readings remain reliable and that external factors do not contribute to variations in conductivity measurements.</p>
             <h3>2.2 Model Contaminant</h3>
             <p>Zinc (Zn) is selected as the model heavy metal contaminant. Specifically, zinc sulfate (ZnSO₄) is chosen due to the following reasons:</p>
             <ul>
@@ -85,6 +86,16 @@
                 <li><strong>Commercial Availability:</strong> Zinc sulfate (ZnSO₄) is widely available and serves as a practical contaminant source for experimental validation.</li>
                 <li><strong>pH Considerations:</strong> At a concentration of 30 ppm, ZnSO₄ maintains a relatively low pH (~6.4), ensuring better compatibility with the activated carbon filtration mechanism.</li>
             </ul>
+            <h3>2.3 Filtration Standards</h3>
+            <p>To evaluate the performance of the purification system, the following target standards are established: </p>
+            <ul>
+                <li><strong>Initial Zn Concentration:</strong> 30 ppm</li>
+                <li><strong>Target Zn Concentration:</strong> <5 ppm</li>
+                <li><strong>Ion Removal Efficiency:</strong> ~83%</li>
+            </ul>
+            <h3>2.4 Model Solvent</h3>
+            <p>For initial testing, deionized (DI) water will be used to isolate the effects of Zn removal. Subsequent experiments will involve tap water to assess real-world performance and adaptability to varying water chemistries.</p>
+            
         </section>
         <section id="sensor">
             <h2>3. Sensor: TDS Meter</h2>
@@ -92,7 +103,6 @@
             <h3>3.1 Relevance to Water Purification Process</h3>
             <p>Our system is designed to purify water that has been intentionally contaminated with zinc sulfate. The purification process involves passing the water through an activated carbon filter, which effectively removes heavy metal ions and other contaminants. The TDS meter plays a crucial role in monitoring this purification process by continuously measuring the water’s conductivity until it reaches an acceptable threshold.</p>
             <h3>3.2 Operational Principles</h3>
-            <p>The sensor operates based on the following principles:</p>
             <ul>
                 <li><strong>Input and Output Parameters:</strong> The TDS sensor operates within an input voltage range of 3.3V–5.5V and provides an analog output voltage between 0V and 2.3V, which is read by an Arduino microcontroller.</li>
                 <li><strong>Measurement Mechanism:</strong> The sensor detects changes in electrical conductivity caused by dissolved ions. Higher ion concentrations result in increased conductivity, while a successful purification process should lower conductivity values.</li>
@@ -100,27 +110,33 @@
             </ul>
             <h3>3.3 Integration into the System</h3>
             <ol>
-                <li>Initial Measurement: Before purification, the TDS meter records the baseline conductivity of zinc sulfate-contaminated water.</li>
-                <li>Filtration Process: The water is passed through the activated carbon filter, which absorbs and removes metal ions.</li>
-                <li>Post-Filtration Monitoring: The TDS meter continuously measures conductivity to determine whether ion levels have been sufficiently reduced.</li>
-                <li>Threshold-Based Control: Once the TDS reading falls below the pre-set threshold, the system confirms successful purification.</li>
+                <li><strong>Initial Measurement:</strong> Before purification, the TDS meter records the baseline conductivity of zinc sulfate-contaminated water.</li>
+                <li><strong>Filtration Process:</strong> The water is passed through the activated carbon filter, which absorbs and removes metal ions.</li>
+                <li><strong>Post-Filtration Monitoring:</strong> The TDS meter continuously measures conductivity to determine whether ion levels have been sufficiently reduced.</li>
+                <li><strong>Threshold-Based Control:</strong> Once the TDS reading falls below the pre-set threshold, the system confirms successful purification.</li>
             </ol>
+            <h3>Significance</h3>
+            <p>By integrating a TDS meter into our design, we ensure real-time monitoring and verification of water purity. This allows for an efficient and quantitative assessment of the purification process, preventing reliance on assumptions about filter effectiveness. Ultimately, this approach enhances the reliability of our water purification system.</p>
         </section>
         <section id="assembly">
             <h2>4. Overall Assembly</h2>
-            <p>The water purification system is designed to effectively remove heavy metal ions from contaminated water using activated charcoal as a filtration medium. This system operates as a closed-loop filtration setup, integrating a peristaltic pump, a Total Dissolved Solids (TDS) sensor, and an Arduino-based microcontroller for real-time monitoring and control.</p>
             <h3>4.1 System Overview</h3>
-            <p>The filtration process follows a cyclic approach where contaminated water enters the top chamber, passes through an activated charcoal filter in the middle section, and is then collected in the bottom chamber, where the TDS sensor measures dissolved solids concentration.</p>
-            <h3>4.2 Components</h3>
-            <ul>
-                <li><strong>Top Chamber:</strong> Serves as the initial reservoir where water is introduced into the system.</li>
-                <li><strong>Filtration Unit:</strong> Houses activated charcoal and facilitates water purification.</li>
-                <li><strong>Bottom Chamber:</strong> Collects filtered water and integrates the TDS sensor for real-time monitoring.</li>
-                <li><strong>Peristaltic Pump:</strong> Ensures controlled and consistent water circulation.</li>
-                <li><strong>Arduino Control System:</strong> Monitors TDS levels and automates the purification process.</li>
-            </ul>
-            <h3>4.3 Circuit Design & Control Mechanisms</h3>
-            <p>The system integrates multiple circuits to facilitate efficient water purification. The TDS sensor measurement circuit determines ZnSO₄ removal by detecting total dissolved solids in the water. The peristaltic pump control circuit manages the water flow rate through the filter, ensuring optimal contact time for effective filtration.</p>
+            <p>The water purification system is designed to effectively remove heavy metal ions from contaminated water using activated charcoal as a filtration medium. This system operates as a closed-loop filtration setup, integrating a peristaltic pump, a Total Dissolved Solids (TDS) sensor, and an Arduino-based microcontroller for real-time monitoring and control. The filtration process follows a cyclic approach where contaminated water enters the top chamber, passes through an activated charcoal filter in the middle section, and is then collected in the bottom chamber, where the TDS sensor measures dissolved solids concentration. If the TDS reading exceeds the acceptable threshold, water is recirculated back to the top chamber for additional filtration cycles. This method ensures optimal purification efficiency and maintains the desired water quality.</p>
+            <h3>4.2 Top Chamber (Water Reservoir & Inlet System)</h3>
+            <p>The top chamber serves as the initial reservoir where water is introduced into the system, allowing for controlled distribution into the filter housing. It is constructed from either 3D-printed plastic or plastic cups, with heat-shrink wrap or tape used for sealing. A small vent in the top chamber ensures that the system remains at atmospheric pressure, preventing unwanted pressurization.</p>
+            <h3>4.3 Filtration Unit (Activated Charcoal Housing)</h3>
+            <p>The filtration unit, which houses the activated charcoal, is the core of the purification system. It consists of fine mesh screens to contain the charcoal while allowing water to flow freely. This design ensures effective filtration by maximizing contact time between the water and charcoal while preventing filter media leakage. The filtration chamber is secured using electrical tape or heat-shrink wrap to maintain pressure stability and prevent leaks.</p>
+            <h3>4.4 Bottom Chamber (Filtered Water Collection & TDS Measurement)</h3>
+            <p>Once the water has passed through the filtration unit, it enters the bottom chamber, where it is collected for analysis. This chamber, constructed from either 3D-printed plastic or a pre-made plastic container, is equipped with a TDS sensor that monitors the concentration of dissolved solids. The TDS sensor provides real-time data to assess the filtration process's effectiveness. If the reading indicates that contaminants remain above the desired threshold, water is recirculated for additional purification.</p>
+            <h3>4.5 Peristaltic Pump & Control System</h3>
+            <p>The recirculation process is powered by a 12V DC peristaltic pump, which ensures a controlled and consistent flow rate through the filter. Connected via flexible silicon tubing, the pump maintains steady water movement to maximize filtration efficiency. The pump is regulated through an Arduino microcontroller using a MOSFET, diode, and resistor setup, which allows for precise flow adjustments via Pulse Width Modulation (PWM).</p>
+            <h3>4.6 Structural Framework & Leak Prevention</h3>
+            <p>To ensure stability and ease of assembly, the entire system is mounted on a solid framework made from 3D-printed plastic or acrylic sheets. The tubing is securely fastened using zip ties or clamps, while all connections are sealed with heat-shrink wrap or waterproof adhesive to prevent leaks. The structural design allows for easy disassembly and maintenance, making the system modular and adaptable for future improvements.</p>
+            <h3>4.7 Circuit Design & Control Mechanisms</h3>
+            <p>The system integrates multiple circuits to facilitate efficient water purification. The TDS sensor measurement circuit plays a crucial role in determining ZnSO₄ removal by detecting total dissolved solids in the water. This circuit consists of a TDS sensor module, an Arduino microcontroller, and a breadboard with jumper wires. The sensor continuously monitors water quality and sends data to the Arduino, which determines whether the water requires additional filtration. A while loop within the Arduino program ensures that ZnSO₄ measurements are taken every second. The system will continue recirculating the water until the TDS measurement falls below a predetermined threshold, at which point the pump will stop, indicating that the water has been successfully purified.</p>
+            <p>The peristaltic pump control circuit manages the water flow rate through the activated charcoal filter, ensuring optimal contact time for effective filtration. This circuit includes a 12V DC power supply, a MOSFET transistor, and supporting resistor and diode components, allowing the Arduino to regulate the pump’s speed dynamically.</p>
+            <p>Additionally, the microcontroller interface circuit processes sensor data, manages pump operation, and provides user feedback. Future enhancements may include an LCD display for real-time water quality readouts and a push-button interface for manual operation.</p>
+            <p>This modular water purification system effectively removes ZnSO₄ contaminants by leveraging activated charcoal filtration, sensor-based monitoring, and controlled recirculation. Further enhancements such as additional sensors and smart monitoring allow for a system that can be scaled for broader applications in water purification, making it a viable solution for both small-scale and larger purification needs.</p>
         </section>
  <section id="materials">
             <h2>5. Materials</h2>
