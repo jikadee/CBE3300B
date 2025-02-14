@@ -6,7 +6,7 @@ Welcome to our project repository for **CBE3300B**! This repository is used to m
 
 ## Project Overview: Adaptive Water Purifier
 
-Preliminary Design Report: https://docs.google.com/document/d/1JtWZQF9YNx-nTw8vSg6-9ojlSpluPE39c-McWAlJdTk/edit?usp=sharing
+Preliminary Design Report: https://jikadee.github.io/CBE3300B/pdr.html#filter
 
 ---
 
