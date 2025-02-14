@@ -62,12 +62,29 @@
     <div class="container">
         <section id="introduction">
             <h2>1. Introduction</h2>
-            <p>Access to clean drinking water is essential for public health...</p>
+            <p>Access to clean drinking water is essential for public health, yet water contamination with heavy metal ions remains a critical issue worldwide. Heavy metals such as lead, cadmium, and zinc can accumulate in water supplies due to industrial discharge, mining activities, and corrosion of infrastructure. Chronic exposure to these contaminants poses severe health risks, including neurological disorders, organ damage, and developmental impairments. As a result, effective and affordable water purification technologies are necessary to ensure safe drinking water, particularly in regions with limited access to high-quality filtration systems.</p>
+            <p>This preliminary design report outlines the approach for an adaptive water purification system focused on the removal of heavy metal ions using activated carbon as the primary filtration medium. The device aims to efficiently remove contaminants from tap water, ensuring access to clean drinking water. It incorporates dynamic adaptability, allowing the purification process to adjust based on varying contaminant concentrations. The primary method for monitoring purification status will be conductivity measurements using a Total Dissolved Solids (TDS) sensor, which provides real-time feedback on water quality.</p>
+            <p>The range of contaminants in tap water varies based on local water sources and treatment processes. While municipal water treatment facilities often regulate contaminant levels, trace amounts of heavy metals, organic compounds, and residual disinfectants can still be present. By focusing on heavy metal removal, this project addresses one of the most persistent and hazardous water quality concerns. Zinc sulfate (ZnSO₄) is selected as a model contaminant for testing due to its availability, moderate toxicity, and relevance to industrial pollution.This targeted approach will streamline the design and testing phases while addressing critical aspects of water safety.</p>
         </section>
         <section id="filter">
             <h2>2. Filter and Model Contaminant</h2>
             <h3>2.1 Filter: Activated Carbon</h3>
-            <p>Activated carbon is selected for its exceptional adsorption properties...</p>
+            <p>Activated carbon is selected as the filtration material due to its exceptional adsorption properties:</p>
+            <ul>
+                <li><strong>Large Surface Area:</strong> The porous nature of activated carbon allows heavy metal ions to be deposited within its pores, enhancing its adsorption capability.</li>
+                <li><strong>Abundant Surface Functional Groups:</strong> Functional groups on the surface of activated carbon can form complexes with metal ions, further facilitating adsorption and improving removal efficiency.</li>
+            </ul>
+            <p>Given these characteristics, activated carbon serves as an effective adsorbent for removing Zn and other heavy metal contaminants from water sources.</p>
+            <h3>2.1.2 Caveats & Mitigation Strategies</h3>
+            <p>Some functional groups present on activated carbon may deprotonate, altering the conductivity of the solution. Since conductivity measurements will be utilized to monitor heavy metal concentrations, maintaining solution stability is crucial. The solution pH must be maintained below the Point of Zero Charge (PZC) of activated carbon, which is approximately pH 7 for commercially available activated carbon. Keeping the pH below this threshold minimizes deprotonation, thereby preserving the reliability of conductivity-based sensing.</p>
+            <p>Another concern is that activated carbon may contain residual minerals from processing, which could leach into the water and interfere with conductivity measurements. To mitigate this issue, thorough rinsing of activated carbon before use is recommended to eliminate residual minerals and ensure more accurate conductivity readings. Proper pre-treatment of the activated carbon ensures that the system’s readings remain reliable and that external factors do not contribute to variations in conductivity measurements.</p>
+            <h3>2.2 Model Contaminant</h3>
+            <p>Zinc (Zn) is selected as the model heavy metal contaminant. Specifically, zinc sulfate (ZnSO₄) is chosen due to the following reasons:</p>
+            <ul>
+                <li><strong>Relatively Lower Toxicity:</strong> Compared to other heavy metals such as lead or cadmium, Zn is less toxic, making it a safer model contaminant for initial testing.</li>
+                <li><strong>Commercial Availability:</strong> Zinc sulfate (ZnSO₄) is widely available and serves as a practical contaminant source for experimental validation.</li>
+                <li><strong>pH Considerations:</strong> At a concentration of 30 ppm, ZnSO₄ maintains a relatively low pH (~6.4), ensuring better compatibility with the activated carbon filtration mechanism.</li>
+            </ul>
         </section>
         <section id="sensor">
             <h2>3. Sensor: TDS Meter</h2>
