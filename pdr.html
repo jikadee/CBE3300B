@@ -76,9 +76,13 @@
                 <li><strong>Abundant Surface Functional Groups:</strong> Functional groups on the surface of activated carbon can form complexes with metal ions, further facilitating adsorption and improving removal efficiency.</li>
             </ul>
             <p>Given these characteristics, activated carbon serves as an effective adsorbent for removing Zn and other heavy metal contaminants from water sources.</p>
+            <figure style="text-align: center;">
+            <img src="activated_carbon.png" alt="System Diagram" style="max-width:100%; height:auto; display:block; margin:auto;">
+            <figcaption>Figure 1: Activated Carbon (Sultana et al. 2021) [1]</figcaption>
+            </figure>
             <h4>2.1.2 Caveats & Mitigation Strategies</h4>
-            <p>Some functional groups present on activated carbon may deprotonate, altering the conductivity of the solution. Since conductivity measurements will be utilized to monitor heavy metal concentrations, maintaining solution stability is crucial. The solution pH must be maintained below the Point of Zero Charge (PZC) of activated carbon, which is approximately pH 7 for commercially available activated carbon (PMC, 2022) [1]. Keeping the pH below this threshold minimizes deprotonation, thereby preserving the reliability of conductivity-based sensing. Ensuring a stable pH environment is essential for accurate and consistent measurement of heavy metal removal efficiency.</p>
-            <p>Another concern is that activated carbon may contain residual minerals from processing, which could leach into the water and interfere with conductivity measurements. To mitigate this issue, thorough rinsing of activated carbon before use is recommended to eliminate residual minerals and ensure more accurate conductivity readings (ResearchGate, 2022) [2]. Proper pre-treatment of the activated carbon ensures that the system’s readings remain reliable and that external factors do not contribute to variations in conductivity measurements.</p>
+            <p>Some functional groups present on activated carbon may deprotonate, altering the conductivity of the solution. Since conductivity measurements will be utilized to monitor heavy metal concentrations, maintaining solution stability is crucial. The solution pH must be maintained below the Point of Zero Charge (PZC) of activated carbon, which is approximately pH 7 for commercially available activated carbon (PMC, 2022) [2]. Keeping the pH below this threshold minimizes deprotonation, thereby preserving the reliability of conductivity-based sensing. Ensuring a stable pH environment is essential for accurate and consistent measurement of heavy metal removal efficiency.</p>
+            <p>Another concern is that activated carbon may contain residual minerals from processing, which could leach into the water and interfere with conductivity measurements. To mitigate this issue, thorough rinsing of activated carbon before use is recommended to eliminate residual minerals and ensure more accurate conductivity readings (ResearchGate, 2022) [3]. Proper pre-treatment of the activated carbon ensures that the system’s readings remain reliable and that external factors do not contribute to variations in conductivity measurements.</p>
             <h3>2.2 Model Contaminant</h3>
             <p>Zinc (Zn) is selected as the model heavy metal contaminant. Specifically, zinc sulfate (ZnSO₄) is chosen due to the following reasons:</p>
             <ul>
@@ -123,7 +127,7 @@
             <h3>4.1 System Overview</h3>
             <figure style="text-align: center;">
             <img src="assembly_draft.png" alt="System Diagram" style="max-width:100%; height:auto; display:block; margin:auto;">
-            <figcaption>Figure 1: Water Purifier System Diagram</figcaption>
+            <figcaption>Figure 2: Water Purifier System Diagram</figcaption>
             </figure>
             <p>The water purification system is designed to effectively remove heavy metal ions from contaminated water using activated charcoal as a filtration medium. This system operates as a closed-loop filtration setup, integrating a peristaltic pump, a Total Dissolved Solids (TDS) sensor, and an Arduino-based microcontroller for real-time monitoring and control. The filtration process follows a cyclic approach where contaminated water enters the top chamber, passes through an activated charcoal filter in the middle section, and is then collected in the bottom chamber, where the TDS sensor measures dissolved solids concentration. If the TDS reading exceeds the acceptable threshold, water is recirculated back to the top chamber for additional filtration cycles. This method ensures optimal purification efficiency and maintains the desired water quality.</p>
             <h3>4.2 Top Chamber (Water Reservoir & Inlet System)</h3>
@@ -382,8 +386,9 @@
         </section>
         <section id="references">
             <h2>8. References</h2>
-            <p>[1] PMC (2022). "Point of Zero Charge of Activated Carbon." Retrieved from <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8875830/">PMC</a></p>
-            <p>[2] ResearchGate (2022). "Conductivity Increase After Sorption of Activated Carbon." Retrieved from <a href="https://www.researchgate.net/post/How-come-conductivity-increased-at-very-low-concentrations-of-CuSO4-after-sorption-of-activated-carbon">ResearchGate</a></p>
+            <p>[1] ResearchGate (2021). "A review on experimental chemically modified activated carbon to enhance dye and heavy metals adsorption." Retrieved from <a href="https://www.researchgate.net/publication/357384495_A_review_on_experimental_chemically_modified_activated_carbon_to_enhance_dye_and_heavy_metals_adsorption">ResearchGate</a>
+            <p>[2] PMC (2022). "Point of Zero Charge of Activated Carbon." Retrieved from <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8875830/">PMC</a></p>
+            <p>[3] ResearchGate (2022). "Conductivity Increase After Sorption of Activated Carbon." Retrieved from <a href="https://www.researchgate.net/post/How-come-conductivity-increased-at-very-low-concentrations-of-CuSO4-after-sorption-of-activated-carbon">ResearchGate</a></p>
         </section>
     </div>
     
