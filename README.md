@@ -10,7 +10,7 @@ Milestone 0 - Preliminary Design Report: https://jikadee.github.io/CBE3300B/pdr.
 
 Milestone 1 - Initial Design Report: https://jikadee.github.io/CBE3300B/idr.html
 
-Milestone 2 - Initial Prototype: 
+Milestone 2 - Initial Prototype: https://jikadee.github.io/CBE3300B/initialprototype.html
 
 ---
 
