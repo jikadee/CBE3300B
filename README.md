@@ -12,6 +12,10 @@ Milestone 1 - Initial Design Report: https://jikadee.github.io/CBE3300B/idr.html
 
 Milestone 2 - Initial Prototype: https://jikadee.github.io/CBE3300B/initialprototype.html
 
+Milestone 3 - Intermediate Prototype: https://jikadee.github.io/CBE3300B/intermediateprototype.html
+
+Milestone 4 - Minimum Viable Product: https://jikadee.github.io/CBE3300B/mvp.html
+
 ---
 
 ## Meet the Team
@@ -28,7 +32,9 @@ Feel free to reach out to us for any inquiries or collaboration opportunities!
 
 Here’s what you’ll find in this repository:
 
-[Insert details later.]
+- Sketches and CAD files;
+- Diagrams of circuit and CAD designs;
+- Milestone reports, with detailed descriptions of our progress.
 
 ---
 
