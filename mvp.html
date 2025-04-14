@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Water Purifier: Build Progress</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007acc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #005f99;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        nav a:hover {
+            background: #004477;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            background: white;
+            padding: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Adaptive Water Purifier: Build Progress</h1>
+    </header>
+    <nav>
+        <a href="#housing-update">Circuitry Housing</a>
+        <a href="#filtration-unit">Filtration Unit</a>
+        <a href="#arduino-sketch">Arduino Sketch</a>
+    </nav>
+    <div class="container">
+        <section id="housing-update">
+            <h2>1. Circuitry Housing Update</h2>
+            <p>We modified the top lid of the housing to better accommodate the TDS sensor and improve wiring access. This change enhances sensor stability during measurements. Please see our circuitry housing files [here](https://github.com/jikadee/CBE3300B/tree/120e3fc7c5d7357e348b38d8321a7ca0dd07756f/arduino_housing).</p>
+            <figure style="text-align: center;">
+              <img src="images/housing.jpeg" alt="Circuitry housing" style="max-width:100%; height:auto; display:block; margin:auto;">
+              <figcaption>Figure 1: Circuitry housing</figcaption>
+            </figure>
+            <figure style="text-align: center;">
+              <img src="images/circuit.jpeg" alt="Circuitry housing" style="max-width:100%; height:auto; display:block; margin:auto;">
+              <figcaption>Figure 2: Housing interior</figcaption>
+            </figure>
+        </section>
+
+        <section id="filtration-unit">
+            <h2>2. Filtration Unit</h2>
+            <p>We are in the final stages of completing our CAD design for the filtration unit housing. This version focuses on improved sealing, modular assembly, and easier replacement of activated carbon filters.</p>
+        </section>
+
+        <section id="arduino-sketch">
+            <h2>3. Arduino Sketch</h2>
+            <p>We are also finalizing our arduino sketch. In this latest version, we have fine tuned our filtration threshold variables to better accomodate our filtration unit design. Please see our arduino sketch [here](https://github.com/jikadee/CBE3300B/tree/bbbf104329fbf826692848310a0765e2c45386ca/arduino_sketch).</p>
+        </section>
+    </div>
+
+    <footer style="background: #007acc; color: white; text-align: center; padding: 15px; margin-top: 20px;">
+        <p>© 2025 Penn Water Cleaners. All rights reserved.</p>
+        <a href="index.html" style="color: white; text-decoration: underline;">Back to Home</a>
+    </footer>
+</body>
+</html>
 
