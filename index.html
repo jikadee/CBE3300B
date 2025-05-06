@@ -1,121 +1,129 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Purifier Project | CBE 3300B</title>
-    <style>
-        body {
-            font-family: Helvetica Neue, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #65a6eb;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 1.8rem;
-        }
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #65a6eb;
-            border-bottom: 2px solid #65a6eb;
-            padding-bottom: 5px;
-        }
-        p {
-            line-height: 1.6;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        nav {
-            margin: 20px 0;
-            text-align: center;
-        }
-        nav a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #65a6eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        nav a:hover {
-            background-color: #002d5a;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #65a6eb;
-            color: white;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Water Purifier Project | CBE 3300B</title>
+  <style>
+    body {
+      font-family: Helvetica Neue, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #65a6eb;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 1.8rem;
+    }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #65a6eb;
+      border-bottom: 2px solid #65a6eb;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.6;
+    }
+    ul {
+      padding-left: 20px;
+    }
+
+    .milestone-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px; /* space between buttons */
+      margin-top: 15px;
+      justify-content: center; /* centers the buttons */
+    }
+
+    .milestone-links nav {
+      flex: 0 0 auto;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 16px;
+      background-color: #65a6eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      background-color: #002d5a;
+    }
+
+    section:last-of-type nav {
+      text-align: center; /* center the final nav containing team link */
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #65a6eb;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    Water Purifier Project | CBE 3300B
+  </header>
 
-    <header>
-        Water Purifier Project | CBE 3300B
-    </header>
+  <main>
+    <section>
+      <h2>Project Overview</h2>
+      <p>
+        This project focuses on designing an efficient water purification system to provide safe drinking water in areas lacking access to clean water sources.
+      </p>
 
-    <main>
-        <section>
-            <h2>Project Overview</h2>
-            <p>
-                This project focuses on designing an efficient water purification system to provide safe drinking water in areas lacking access to clean water sources.
-            </p>
-            <nav>
-                <a href="pdr.html">Preliminary Design Report</a>
-            </nav>
-            <nav>
-                <a href="idr.html">Initial Design Report</a>
-            </nav>
-            <nav>
-                <a href="initialprototype.html">Initial Prototype</a>
-            </nav>
-            <nav>
-                <a href="intermediateprototype.html">Intermediate Prototype</a>
-            </nav>
-            <nav>
-                <a href="mvp.html">Miminum Viable Product</a>
-            </nav>
-            <nav>
-                <a href="https://jikadee.github.io/CBE3300B/idr.html#gantt-chart">GANTT Chart</a>
-            </nav>
-        </section>
+      <h2>Project Milestones</h2>
+      <div class="milestone-links">
+        <nav><a href="pdr.html">Preliminary Design Report</a></nav>
+        <nav><a href="idr.html">Initial Design Report</a></nav>
+        <nav><a href="initialprototype.html">Initial Prototype</a></nav>
+        <nav><a href="intermediateprototype.html">Intermediate Prototype</a></nav>
+        <nav><a href="mvp.html">Minimum Viable Product</a></nav>
+        <nav><a href="https://jikadee.github.io/CBE3300B/idr.html#gantt-chart">GANTT Chart</a></nav>
+      </div>
+    </section>
 
-        <section>
-            <h2>Objectives</h2>
-            <ul>
-                <li>Design a portable water purification unit.</li>
-                <li>Ensure removal of common contaminants and pathogens.</li>
-                <li>Maintain affordability and ease of use.</li>
-            </ul>
-        </section>
+    <section>
+      <h2>Objectives</h2>
+      <ul>
+        <li>Design a portable water purification unit.</li>
+        <li>Ensure removal of common contaminants and pathogens.</li>
+        <li>Maintain affordability and ease of use.</li>
+      </ul>
+    </section>
 
-        <section>
-            <h2>Meet the Team</h2>
-            <nav>
-                <a href="team.html">Penn Water Cleaners!</a>
-            </nav>
-        </section>
-    </main>
+    <section>
+      <h2>Meet the Team</h2>
+      <nav>
+        <a href="team.html">Penn Water Cleaners!</a>
+      </nav>
+    </section>
+  </main>
 
-    <footer>
-        &copy; 2025 CBE 3300B Penn Water Cleaners
-    </footer>
-
+  <footer>
+    &copy; 2025 CBE 3300B Penn Water Cleaners
+  </footer>
 </body>
 </html>
