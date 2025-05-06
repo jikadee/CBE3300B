@@ -70,12 +70,22 @@
       background-color: #002d5a;
     }
 
-    .resource-links {
+    .resource-links,
+    .cad-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 16px;
       margin-top: 15px;
+    }
+
+    .cad-links a {
+      background-color: #a3c9f9;
+      color: white;
+    }
+
+    .cad-links a:hover {
+      background-color: #5f9cd6;
     }
 
     .final-report-link {
@@ -127,6 +137,14 @@
         <nav><a href="https://github.com/jikadee/CBE3300B/tree/a974ad34572270407e2b963740b4859ee4e822a4/arduino_housing" target="_blank">Circuitry Housing</a></nav>
       </div>
 
+      <h3 style="margin-top: 30px; color: #65a6eb;">View CAD</h3>
+      <div class="cad-links">
+        <nav><a href="https://a360.co/3SjVahC" target="_blank">Top Chamber</a></nav>
+        <nav><a href="https://a360.co/4cXbNJo" target="_blank">Filter Chamber</a></nav>
+        <nav><a href="https://a360.co/3EAqc1K" target="_blank">Bottom Chamber</a></nav>
+        <nav><a href="https://a360.co/4d2FVDv" target="_blank">Circuitry Housing</a></nav>
+      </div>
+
       <h2>Project Milestones</h2>
       <div class="milestone-links">
         <nav><a href="pdr.html">Preliminary Design Report</a></nav>
@@ -138,7 +156,7 @@
       </div>
 
       <div class="final-report-link">
-        <nav><a href="final_report.html" >Final Report</a></nav>
+        <nav><a href="final_report.html">Final Report</a></nav>
       </div>
     </section>
 
