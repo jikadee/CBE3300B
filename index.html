@@ -69,6 +69,14 @@
       background-color: #002d5a;
     }
 
+    .resource-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 15px;
+    }
+
     section:last-of-type nav {
       text-align: center; /* center the final nav containing team link */
     }
@@ -93,6 +101,20 @@
       <p>
         This project focuses on designing an efficient water purification system to provide safe drinking water in areas lacking access to clean water sources.
       </p>
+      <p>
+        The water purification system is designed to effectively remove heavy metal ions from contaminated water using activated charcoal as a filtration medium. This system operates as a closed-loop filtration setup, integrating a peristaltic pump, a Total Dissolved Solids (TDS) sensor, and an Arduino-based microcontroller for real-time monitoring and control. The filtration process follows a cyclic approach where contaminated water enters the top chamber, passes through an activated charcoal filter in the middle section, and is then collected in the bottom chamber, where the TDS sensor measures dissolved solids concentration. If the TDS reading exceeds the acceptable threshold, water is recirculated back to the top chamber for additional filtration cycles. This method ensures optimal purification efficiency and maintains the desired water quality.
+      </p>
+
+      <figure style="text-align: center;">
+        <img src="images/assembly_draft.png" alt="System Diagram" style="max-width:100%; height:auto; display:block; margin:auto;">
+        <figcaption>Adaptive Water Purifier System Diagram</figcaption>
+      </figure>
+
+      <div class="resource-links">
+        <nav><a href="https://github.com/jikadee/CBE3300B/tree/a974ad34572270407e2b963740b4859ee4e822a4/arduino_sketch" target="_blank">Code</a></nav>
+        <nav><a href="https://github.com/jikadee/CBE3300B/tree/a974ad34572270407e2b963740b4859ee4e822a4/filtration_unit" target="_blank">Filtration Unit</a></nav>
+        <nav><a href="https://github.com/jikadee/CBE3300B/tree/a974ad34572270407e2b963740b4859ee4e822a4/arduino_housing" target="_blank">Circuitry Housing</a></nav>
+      </div>
 
       <h2>Project Milestones</h2>
       <div class="milestone-links">
