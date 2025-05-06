@@ -43,12 +43,13 @@
     .milestone-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px; /* space between buttons */
+      gap: 16px;
       margin-top: 15px;
-      justify-content: center; /* centers the buttons */
+      justify-content: center;
     }
 
-    .milestone-links nav {
+    .milestone-links nav,
+    .final-report-link nav {
       flex: 0 0 auto;
     }
 
@@ -77,8 +78,13 @@
       margin-top: 15px;
     }
 
+    .final-report-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
     section:last-of-type nav {
-      text-align: center; /* center the final nav containing team link */
+      text-align: center;
     }
 
     footer {
@@ -124,6 +130,10 @@
         <nav><a href="intermediateprototype.html">Intermediate Prototype</a></nav>
         <nav><a href="mvp.html">Minimum Viable Product</a></nav>
         <nav><a href="https://jikadee.github.io/CBE3300B/idr.html#gantt-chart">GANTT Chart</a></nav>
+      </div>
+
+      <div class="final-report-link">
+        <nav><a href="final_report.html" >Final Report</a></nav>
       </div>
     </section>
 
