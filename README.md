@@ -16,6 +16,8 @@ Milestone 3 - Intermediate Prototype: https://jikadee.github.io/CBE3300B/interme
 
 Milestone 4 - Minimum Viable Product: https://jikadee.github.io/CBE3300B/mvp.html
 
+**Final report**: https://jikadee.github.io/CBE3300B/final_report.html
+
 ---
 
 ## Meet the Team
