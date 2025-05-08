@@ -1,1 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project Report: Adaptive Water Purifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007acc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #005f99;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        nav a:hover {
+            background: #004477;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            background: white;
+            padding: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        #backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Final Project Report: Adaptive Water Purifier</h1>
+    </header>
+    <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#market-research">Market Research</a>
+        <a href="#filter-contaminant">Filter and Model Contaminant</a>
+        <a href="#sensor">Sensor: TDS Meter</a>
+        <a href="#overall-assembly">Overall Assembly</a>
+        <a href="#materials">Materials</a>
+        <a href="#results">Results</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#future-considerations">Future Considerations</a>
+        
+    </nav>
+    <div class="container">
+        <section id="introduction">
+            <h2>0. Introduction</h2>
+            <p>Access to clean drinking water is essential for public health, yet water contamination with heavy metal ions remains a critical issue worldwide. Heavy metals such as lead, cadmium, and zinc can accumulate in water supplies due to industrial discharge, mining activities, and corrosion of infrastructure. Chronic exposure to these contaminants poses severe health risks, including neurological disorders, organ damage, and developmental impairments. As a result, effective and affordable water purification technologies are necessary to ensure safe drinking water, particularly in regions with limited access to high-quality filtration systems.</p>
+            <p>This preliminary design report outlines the approach for an adaptive water purification system focused on the removal of heavy metal ions using activated carbon as the primary filtration medium. The device aims to efficiently remove contaminants from tap water, ensuring access to clean drinking water. It incorporates dynamic adaptability, allowing the purification process to adjust based on varying contaminant concentrations. The primary method for monitoring purification status will be conductivity measurements using a Total Dissolved Solids (TDS) sensor, which provides real-time feedback on water quality.</p>
+            <p>The range of contaminants in tap water varies based on local water sources and treatment processes. While municipal water treatment facilities often regulate contaminant levels, trace amounts of heavy metals, organic compounds, and residual disinfectants can still be present. By focusing on heavy metal removal, this project addresses one of the most persistent and hazardous water quality concerns. Zinc sulfate (ZnSO₄) is selected as a model contaminant for testing due to its availability, moderate toxicity, and relevance to industrial pollution. This targeted approach will streamline the design and testing phases while addressing critical aspects of water safety.</p>
+        </section>
+        <section id="market-research">
+            <h2>1. Market Research</h2>
+            <h3>1.1 Industry Overview</h3>
+            <p>The global water purification market is expanding rapidly, driven by heightened awareness of water quality issues and an increasing demand for reliable, accessible solutions. A key segment of this market is point-of-use (POU) water treatment systems, which are designed for household or localized purification. According to estimates from Fortune Business Insights and Precision Business Insights, the global POU market is projected to grow from approximately $19.58 billion in 2021 to $34.54 billion by 2029. This growth corresponds to a compound annual growth rate (CAGR) of 8.3%, underscoring both the scale of the market and the urgency of the need for purification technologies. In the United States, the market is expected to rise from $6.82 billion in 2024 to $10.58 billion by 2032, reflecting a CAGR of 5.6%. This sustained growth indicates the increasing prioritization of water purification solutions, especially those that can be deployed at the household level.</p>
+            <h3>1.2 Emerging Market Trends</h3>
+            <p>Three dominant trends are currently shaping the evolution of the water purification market. First, there is a widespread shift toward smart water treatment systems. These systems utilize embedded electronics and Internet of Things (IoT) technologies to enable real-time monitoring of water quality, automated feedback control, and enhanced user interaction. The integration of such features represents a major step forward in consumer water purification, as users can receive immediate data on contaminant levels and system performance. Second, public health concerns have played a pivotal role in driving market growth. The rising prevalence of waterborne diseases, many of which result from exposure to untreated or inadequately filtered water, has heightened consumer awareness. Households are increasingly seeking reliable POU systems that can serve as a secondary line of defense against contaminants such as bacteria, viruses, and especially heavy metals. Third, environmental factors, including industrial runoff and deteriorating infrastructure, have exacerbated the issue of heavy metal contamination. Waste from mining operations and corroded pipelines often introduces metals such as lead, cadmium, and zinc into drinking water supplies. As a result, filtration systems capable of targeting heavy metals are gaining traction as essential consumer products.</p>
+            <h3>1.3 Competitive Landscape</h3>
+            <p>Despite robust market growth, the competitive landscape remains segmented, with most commercial products falling into either low-cost or high-cost categories. On the low-cost end, brands such as Brita and PUR dominate the market. These systems typically employ activated carbon filtration and are priced in the range of $20 to $125. While these filters are effective for removing chlorine, improving taste and odor, and reducing minor particulate matter, they tend to perform poorly in removing heavy metals and other toxic ions. Moreover, these systems lack the capacity for real-time monitoring, which limits their functionality in adaptive or automated purification. In contrast, high-end systems such as AquaTru and Voltea offer significantly improved filtration capabilities through the use of reverse osmosis or capacitive deionization. These systems often include advanced features such as digital monitoring and multiple filtration stages, but their high cost—ranging from approximately $450 to over $500—makes them inaccessible to many households, particularly those in low-income or underserved communities.</p>
+            <h3>1.4 Value Proposition</h3>
+            <p>This binary market structure reveals a critical gap in available products: there is a lack of mid-priced filtration systems that offer both effective heavy metal removal and smart monitoring capabilities. Our Adaptive Water Purifier is designed to address this gap. By incorporating activated carbon filtration with real-time Total Dissolved Solids (TDS) monitoring and a modular control system, the purifier delivers an intermediate solution that balances affordability with performance. The projected cost of the system is approximately $170, placing it well below the price of premium filtration units while offering significantly more functionality than basic pitcher or faucet-mounted filters. This price-performance positioning enables the device to meet the needs of a broader range of consumers who are currently underserved by existing product offerings.</p>
+            <h3>1.5 Target Market and Applications</h3>
+            <p>The target market for the Adaptive Water Purifier includes both urban households with aging infrastructure and low-income or rural communities affected by industrial or agricultural runoff. In many older cities across the United States, including locations such as Flint, Michigan and Pittsburgh, Pennsylvania, residents continue to rely on outdated water systems with corroding lead pipes. In such environments, the risk of heavy metal contamination is significantly elevated. However, households often lack access to high-performance water filtration due to cost constraints. The proposed system, by providing reliable heavy metal removal at a more accessible price point, directly addresses this need. Similarly, in rural or low-income regions where water quality is compromised by industrial activity, mining runoff, or insufficient treatment facilities, there is an urgent demand for point-of-use purification solutions. The Adaptive Water Purifier is uniquely suited to meet these challenges, as it does not depend on centralized water infrastructure and provides users with quantifiable, real-time assurance of water safety.</p>
+            <h3>1.6 SWOT Analysis</h3>
+            <p>To assess the product’s potential impact in the marketplace, a SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis was conducted. The system’s key strengths include its smart, adaptive purification model, its focus on effective heavy metal removal, and its positioning as a more affordable alternative to reverse osmosis systems. It leverages real-time TDS monitoring to optimize filtration efficiency, thereby improving performance while minimizing filter waste. However, the system does face certain limitations. Its filtration range may not be as broad as that of high-end systems, particularly in removing fluoride, pharmaceutical residues, or bacteria. Additionally, while priced lower than premium models, the purifier still requires a greater upfront investment than basic carbon filters, which could hinder adoption among highly cost-sensitive consumers. Another limitation is the lack of established brand recognition, which may present barriers to market entry in a competitive and crowded industry.</p>
+            <p>Nevertheless, the market presents significant opportunities. Rising concern over water safety, particularly in the wake of high-profile contamination crises, has created a fertile environment for the adoption of novel filtration technologies. The growing integration of smart home devices also favors systems that include IoT-enabled features, such as the TDS monitoring system integrated into this purifier. Potential partnerships with nonprofit organizations, municipal water programs, or disaster relief agencies may also help expand access and build trust in underserved regions. However, certain threats remain. Established companies may quickly replicate and deploy similar features, leveraging their distribution networks and consumer trust. Additionally, regulatory requirements such as NSF/ANSI certification for drinking water systems could present time- and cost-intensive hurdles before market launch.</p>
+            <h3>1.7 Market Research Conclusions</h3>
+            <p>In summary, the Adaptive Water Purifier is well-positioned to enter a growing market with unmet needs for affordable, smart, and heavy metal-focused water purification systems. Through its technical design, cost-efficiency, and strategic targeting of vulnerable communities, it holds significant potential to fill a critical gap in the water treatment landscape.</p>
+        </section>
+        <section id="filter-contaminant">
+            <h2>2. Filter and Model Contaminant</h2>
+            <h3>2.1 Filter: Activated Carbon</h3>
+            <h4>2.1.1 Advantages of Activated Carbon</h4>
+            <p>Activated carbon is selected as the filtration material due to its exceptional adsorption properties:</p>
+            <ul>
+                <li><strong>Large Surface Area:</strong> The porous nature of activated carbon allows heavy metal ions to be deposited within its pores, enhancing its adsorption capability.</li>
+                <li><strong>Abundant Surface Functional Groups:</strong> Functional groups on the surface of activated carbon can form complexes with metal ions, further facilitating adsorption and improving removal efficiency.</li>
+            </ul>
+            <h4>2.1.2 Caveats & Mitigation Strategies</h4>
+            <p>Some functional groups present on activated carbon may deprotonate, altering the conductivity of the solution. Since conductivity measurements will be utilized to monitor heavy metal concentrations, maintaining solution stability is crucial. The solution pH must be maintained below the Point of Zero Charge (PZC) of activated carbon, which is approximately pH 7 for commercially available activated carbon (PMC, 2022) [1]. Keeping the pH below this threshold minimizes deprotonation, thereby preserving the reliability of conductivity-based sensing. Ensuring a stable pH environment is essential for accurate and consistent measurement of heavy metal removal efficiency.</p>
+            <p>Another concern is that activated carbon may contain residual minerals from processing, which could leach into the water and interfere with conductivity measurements. To mitigate this issue, thorough rinsing of activated carbon before use is recommended to eliminate residual minerals and ensure more accurate conductivity readings (ResearchGate, 2022) [2]. Proper pre-treatment of the activated carbon ensures that the system’s readings remain reliable and that external factors do not contribute to variations in conductivity measurements.</p>
+            <h3>2.2 Model Contaminant</h3>
+            <p>Zinc (Zn) is selected as the model heavy metal contaminant. Specifically, zinc sulfate (ZnSO₄) is selected due to the following reasons:</p>
+            <ul>
+                <li><strong>Relatively Lower Toxicity:</strong> Compared to other heavy metals such as lead or cadmium, Zn is less toxic, making it a safer model contaminant for initial testing.</li>
+                <li><strong>Commercial Availability:</strong> Zinc sulfate (ZnSO₄) is widely available and serves as a practical contaminant source for experimental validation.</li>
+                <li><strong>pH Considerations:</strong> At a concentration of 30 ppm, ZnSO₄ maintains a relatively low pH (~6.4), ensuring better compatibility with the activated carbon filtration mechanism.</li>
+            </ul>
+            <h3>2.3 Filtration Standards</h3>
+            <p>To evaluate the performance of the purification system, the following target standards were established initially:</p>
+            <ul>
+                <li>Initial Zn Concentration: 30 ppm</li>
+                <li>Target Zn Concentration: < 5 ppm</li>
+                <li>Ion Removal Efficiency: ~83%</li>
+            </ul>
+            <p>However, upon initial testing, we discovered that although the carbon successfully absorbs metal ions, it also leaches industrial residue into the solution. This unintended release of contaminants causes the overall ppm to increase over time, particularly at low initial metal ion concentrations. In some cases, instead of decreasing, the total ppm in the solution would rise. To address this issue, we began using salt solutions with higher initial concentrations (~500 ppm), which ensured that the rate of metal ion adsorption by the carbon exceeded the rate of residue leaching. This adjustment helped maintain the desired purification effect.</p>
+            <h3>2.4 Model Solvent</h3>
+            <p>For initial testing, deionized (DI) water will be used to isolate the effects of Zn removal. Subsequent experiments will involve tap water to assess real-world performance and adaptability to varying water chemistries.</p>
+        </section>
+        <section id="sensor">
+            <h2>3. Sensor: TDS Meter</h2>
+            <p>The Total Dissolved Solids (TDS) meter is a critical component in our water purification system, ensuring the removal of dissolved heavy metal ions, particularly zinc and sulfate, from the water. The meter operates by measuring the electrical conductivity of the water, which directly correlates to the concentration of dissolved solids.</p>
+            <h3>3.1 Relevance to Water Purification Process</h3>
+            <p>Our system is designed to purify water that has been intentionally contaminated with zinc sulfate. The purification process involves passing the water through an activated carbon filter, which effectively removes heavy metal ions and other contaminants. The TDS meter plays a crucial role in monitoring this purification process by continuously measuring the water’s conductivity until it reaches an acceptable threshold.</p>
+            <h3>3.2 Operational Principles</h3>
+            <ul>
+                <li><strong>Input and Output Parameters:</strong> The TDS sensor operates within an input voltage range of 3.3V–5.5V and provides an analog output voltage between 0V and 2.3V, which is read by an Arduino microcontroller.</li>
+                <li><strong>Measurement Mechanism:</strong> The sensor detects changes in electrical conductivity caused by dissolved ions. Higher ion concentrations result in increased conductivity, while a successful purification process should lower conductivity values.</li>
+                <li><strong>Accuracy and Calibration:</strong> The sensor has a measurement accuracy of ±10% Full Scale at 25°C, necessitating calibration to ensure reliable readings.</li>
+            </ul>
+            <h3>3.3 Integration into the System</h3>
+            <ul>
+                <li><strong>Initial Measurement:</strong> Before purification, the TDS meter records the baseline conductivity of zinc sulfate-contaminated water.</li>
+                <li><strong>Filtration Process:</strong> The water is passed through the activated carbon filter, which absorbs and removes metal ions.</li>
+                <li><strong>Post-Filtration Monitoring:</strong> The TDS meter continuously measures conductivity to determine whether ion levels have been sufficiently reduced.</li>
+                <li><strong>Threshold-Based Control:</strong> Once the TDS reading falls below the pre-set threshold (e.g., 50 mg/L for ideal drinking water quality), the system confirms successful purification.</li>
+            </ul>
+            <h3>3.4 Significance</h3>
+            <p>By integrating a TDS meter into our design, we ensure real-time monitoring and verification of water purity. This allows for an efficient and quantitative assessment of the purification process, preventing reliance on assumptions about filter effectiveness. Ultimately, this approach enhances the reliability of our water purification system.</p>
+        </section>
+        <section id="overall-assembly">
+            <h2>4. Overall Assembly</h2>
+
+            <h3>4.1 System Overview</h3>
+            <p>This modular water purification system is engineered for the effective removal of heavy metal ions and other dissolved contaminants using activated charcoal as the primary filtration medium. The system adopts a gravity-driven, closed-loop design that integrates an Arduino microcontroller, a Total Dissolved Solids (TDS) sensor, and a peristaltic pump for automated monitoring and control. Water is introduced at the top of the assembly, flowing downward through a centrally aligned filter chamber filled with activated charcoal and finally collecting in the bottom chamber. Here, the TDS sensor evaluates water quality. If contaminant levels exceed a defined threshold, the microcontroller activates the pump to recirculate the water to the top chamber for additional purification cycles. This approach enhances purification efficiency while supporting a modular, scalable, and easily serviceable design.</p>
+
+            <h3>4.2 Top Chamber (Water Reservoir & Inlet System)</h3>
+            <p>The top chamber serves as the initial entry point for untreated water and as the uppermost structural component of the system. It is designed with a funnel-shaped interior to promote a smooth, directed flow into the filter chamber while minimizing lateral leakage and splashback along the walls. At the bottom of this funnel, a fine mesh screen is mounted to provide foundational support for the charcoal media housed in the chamber below. This mesh allows water to pass freely while preventing particulate escape. The chamber also includes two precisely placed cutouts along its lower sidewalls, designed to accommodate the vertical support arms rising from the bottom chamber. These structural ports allow the entire unit to snap together via a friction-based click-lock system, enabling quick and secure assembly without adhesives or hardware. Together, these features allow the chamber to act as both a reservoir and a structural lid, maintaining system alignment and sealing performance during operation.</p>
+
+            <h3>4.3 Filtration Unit (Activated Charcoal Housing)</h3>
+            <p>The filter chamber is the functional core of the system, designed for both high-efficiency filtration and user-friendly maintenance. Its geometry narrows into a conical funnel at the base, guiding water downward through the charcoal bed while eliminating stagnation zones and potential backflow. Unlike traditional flat-bottom designs, the base of this chamber is recessed to nest directly above the bottom chamber, maximizing vertical space and allowing a larger reservoir capacity without increasing the overall system height.</p>
+            <p>The filter chamber also includes two semicircular cutouts near its upper rim. One accommodates wiring from the TDS sensor, while the other allows for insertion of a recirculation tube connected to the peristaltic pump. These features make the chamber adaptable to dynamic experimental setups or longer-duration runs. Crucially, the filter chamber is designed for easy interchangeability of activated charcoal. The mesh base securely holds the charcoal in place, and the entire chamber can be detached from the system by simply lifting it out of the support arms. This allows for fast removal and replacement of used media without disturbing the rest of the assembly. Such modularity makes the design ideal for educational demonstrations, field testing, or iterative design validation.</p>
+
+            <h3>4.4 Bottom Chamber (Filtered Water Collection & TDS Measurement)</h3>
+            <p>The bottom chamber functions as the final collection point for filtered water and the housing for the TDS sensor that monitors water quality. It is cylindrical in shape but features an internal taper that reduces the volume of material used during fabrication while retaining structural integrity. This makes the part lighter and more cost-effective to manufacture. Rising from the base are two integrated support arms, which insert into the corresponding ports in the top and filter chambers. These arms secure the vertical stack and ensure precise alignment of the filtration components.</p>
+            <p>On the interior sidewall, a small holder is built into the print to stabilize the TDS sensor. This ensures consistent positioning of the probe, allowing for repeatable and accurate readings. After water passes through the charcoal media and mesh, it is collected in this chamber. The Arduino reads the real-time TDS value from the sensor and compares it against the desired water purity threshold. If necessary, the system initiates recirculation by pumping water back into the top chamber for additional passes through the filter. This looped design increases purification effectiveness and allows for automation and data logging. The chamber’s geometry ensures smooth flow collection and helps avoid dead zones where contaminants could accumulate.</p>
+
+            <h3>4.5 Peristaltic Pump & Control System</h3>
+            <p>The recirculation process is powered by a 12V DC peristaltic pump, which ensures a controlled and consistent flow rate through the filter. Connected via flexible silicon tubing, the pump maintains steady water movement to maximize filtration efficiency. The pump is regulated through an Arduino microcontroller using a MOSFET, diode, and resistor setup, which allows for precise flow adjustments via Pulse Width Modulation (PWM).</p>
+
+            <h3>4.6 Structural Framework & Leak Prevention</h3>
+            <p>To ensure stability and ease of assembly, the entire system is mounted on a solid framework made from 3D-printed plastic or acrylic sheets. The tubing is securely fastened using zip ties or clamps, while all connections are sealed with heat-shrink wrap or waterproof adhesive to prevent leaks. The structural design allows for easy disassembly and maintenance, making the system modular and adaptable for future improvements.</p>
+
+            <h3>4.7 Circuit Design & Control Mechanisms</h3>
+            <p>The system integrates multiple circuits to facilitate efficient water purification. The TDS sensor measurement circuit plays a crucial role in determining ZnSO₄ removal by detecting total dissolved solids in the water. This circuit consists of a TDS sensor module, an Arduino microcontroller, and PCB board with soldered connections and wires; the specific connections can be seen in Figure 3 below. The sensor continuously monitors water quality and sends data to the Arduino, which determines whether the water requires additional filtration. A while loop within the Arduino program ensures that ZnSO₄ measurements are taken every second. The system will continue recirculating the water until the TDS measurement falls below a predetermined threshold, at which point the pump will stop, indicating that the water has been successfully purified.</p>
+            <p>The peristaltic pump control circuit manages the water flow rate through the activated charcoal filter, ensuring optimal contact time for effective filtration. This circuit includes a 12V DC power supply, a MOSFET transistor, and supporting resistor and diode components, allowing the Arduino to regulate the pump’s speed dynamically.</p>
+            <p>Additionally, the microcontroller interface circuit processes sensor data, manages pump operation, and provides user feedback. Future enhancements may include an LCD display for real-time water quality readouts and a push-button interface for manual operation.</p>
+            <p>This modular water purification system effectively removes ZnSO₄ contaminants by leveraging activated charcoal filtration, sensor-based monitoring, and controlled recirculation. Further enhancements such as additional sensors and smart monitoring allow for a system that can be scaled for broader applications in water purification, making it a viable solution for both small-scale and larger purification needs.</p>
+            <h3>4.8 Pseudocode</h3>
+
+            <p>The following pseudocode outlines the logic implemented in the Arduino program used for automated water quality monitoring and pump control. This system uses a TDS (Total Dissolved Solids) sensor to measure water purity and activates a pump when the TDS level exceeds a predefined threshold. The code also incorporates signal filtering and temperature compensation to improve the accuracy of the readings.</p>
+
+            <h4>Initialize Constants and Variables</h4>
+            <ul>
+                <li>Define analog pin for TDS sensor.</li>
+                <li>Set voltage reference (5V) and sample count for filtering.</li>
+                <li>Declare arrays to store TDS readings.</li>
+                <li>Initialize pump control pin.</li>
+                <li>Set TDS threshold for pump activation.</li>
+            </ul>
+
+            <h4>Setup Phase</h4>
+            <ul>
+                <li>Begin serial communication.</li>
+                <li>Set TDS sensor pin as input.</li>
+                <li>Set pump pin as output.</li>
+            </ul>
+
+            <h4>Main Loop</h4>
+            <p>Continuously do the following:</p>
+            <ul>
+                <li>Call <code>readTDS()</code> to sample TDS sensor and compute TDS value.</li>
+                <li>Call <code>controlPump()</code> to turn pump on or off based on TDS level.</li>
+            </ul>
+
+            <h4>readTDS() Function</h4>
+            <p>Every 40 milliseconds:</p>
+            <ul>
+                <li>Read analog value from sensor and store in buffer.</li>
+                <li>Advance buffer index in a circular manner.</li>
+            </ul>
+            <p>Every 5 seconds:</p>
+            <ul>
+                <li>Copy buffer to a temporary array.</li>
+                <li>Apply a median filter to reduce noise.</li>
+                <li>Convert filtered value to voltage.</li>
+                <li>Apply temperature compensation.</li>
+                <li>Convert voltage to TDS value using cubic calibration formula.</li>
+                <li>Print TDS value to the serial monitor.</li>
+            </ul>
+
+            <h4>controlPump() Function</h4>
+            <p>If TDS value is above threshold:</p>
+            <ul>
+                <li>Turn pump ON.</li>
+            </ul>
+            <p>Else:</p>
+            <ul>
+                <li>Turn pump OFF.</li>
+            </ul>
+
+            <h4>getMedianNum() Function</h4>
+            <ul>
+                <li>Sort values in the given array.</li>
+                <li>Return the median value for noise reduction.</li>
+            </ul>
+        <h3>4.9 Circuitry Housing</h3>
+            <p>A custom circuitry housing was designed using Autodesk Fusion and 3D printed with a Bambu P1S printer. The enclosure features a rectangular box design with sliding top and front lids for easy access. A circular opening on the right wall accommodates the peristaltic pump, while outlet cutouts were added to the left wall for the Arduino board and to the top lid for the TDS sensor cable. To prevent short-circuiting from contact between electrical components, dedicated holders were created for both the battery and the TDS sensor board. The circuit board itself was securely mounted to the left wall using hot glue.</p>
+    <section id="materials">
+    <h2>5. Materials</h2>
+    
+    <h3>5.1 Major Components</h3>
+    <ul>
+        <li>Filter Media:
+            <ul>
+                <li>Sand</li>
+                <li>Activated carbon/charcoal</li>
+                <li>100-micron nylon mesh</li>
+                <li>3D-printed vessel OR ion exchange resin (Na⁺)</li>
+            </ul>
+        </li>
+        <li>Housing:
+            <ul>
+                <li>3D-printed casing</li>
+            </ul>
+        </li>
+        <li>Water Flow System:
+            <ul>
+                <li>Gravity-driven system with a water pump for controlled flow</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>5.2 Hardware and Electronics</h3>
+    <ul>
+        <li><strong>Microcontroller and Power Supply:</strong>
+            <ul>
+                <li>Arduino UNO R3</li>
+                <li>USB-B cable (computer to Arduino)</li>
+                <li>12V power supply</li>
+                <li>Barrel jack splitter (to +/- terminals or leads)</li>
+            </ul>
+        </li>
+        <li><strong>Flow Cell Components:</strong>
+            <ul>
+                <li>CAD files for flow cell</li>
+                <li>UNO CAD files (provided by Joe): <a href="#">GitHub Link</a></li>
+                <li>Flow cell to be designed using UNO case dimensions</li>
+            </ul>
+        </li>
+        <li><strong>Electrical Components:</strong>
+            <ul>
+                <li><strong>Resistors:</strong>
+                    <ul>
+                        <li>2 × 10KΩ potentiometer (variable resistor)</li>
+                        <li>2 × 220Ω resistor (1 for LED, 1 for motor control)</li>
+                        <li>1 × 10KΩ resistor</li>
+                    </ul>
+                </li>
+                <li><strong>Sensors and Actuators:</strong>
+                    <ul>
+                        <li>Photosensor</li>
+                        <li>1 × 1N4001 diode</li>
+                        <li>1 × PN2222 transistor</li>
+                        <li>1 × Green LED</li>
+                        <li>1 × Phototransistor</li>
+                    </ul>
+                </li>
+                <li><strong>Pump System:</strong>
+                    <ul>
+                        <li>12V peristaltic pump: <a href="https://www.adafruit.com/product/1150">Adafruit Link</a></li>
+                    </ul>
+                </li>
+                <li><strong>Circuit Board:</strong>
+                    <ul>
+                        <li>Adafruit <a href="https://www.adafruit.com/">protoboard</a> (4 × 6 cm)</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>5.3 Tools and Equipment</h3>
+    <ul>
+        <li>Cut/strip/crimp tool</li>
+        <li>Screwdriver</li>
+        <li>Multimeter</li>
+        <li><strong>3D Printing:</strong>
+            <ul>
+                <li>Bambu Lab P1S 3D printer</li>
+            </ul>
+        </li>
+        <li><strong>Assembly and Testing:</strong>
+            <ul>
+                <li>Glue gun</li>
+                <li>Pipette</li>
+                <li>Balance</li>
+                <li>Glassware</li>
+                <li><strong>Soldering kit</strong></li>
+            </ul>
+        </li>
+        <li>TDS meter: <a href="https://www.amazon.com/dp/B08KXRHK7H">Amazon Link</a></li>
+    </ul>
+    
+    <h3>5.4 Consumables</h3>
+    <ul>
+        <li>Hook-up wire</li>
+        <li>Terminal connectors</li>
+        <li>M2.5 screws and nuts</li>
+        <li>Plastic cups</li>
+        <li>Electrical tape</li>
+        <li>Silicone tubing</li>
+        <li><strong>Filtration Media:</strong>
+            <ul>
+                <li>Activated carbon: <a href="https://www.amazon.com/dp/B0C9MM4CSM">Amazon Link</a></li>
+                <li>100-Micron Nylon Mesh: <a href="https://www.amazon.com/dp/B0CYT5XLXX">Amazon Link</a></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>5.5 List of Items to Purchase</h3>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Link</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>12V Peristaltic Pump</td>
+            <td><a href="https://www.adafruit.com/product/1150">Adafruit</a></td>
+            <td>$24.95</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Activated Carbon (6.6 lbs)</td>
+            <td><a href="https://www.amazon.com/dp/B0C9MM4CSM">Amazon</a></td>
+            <td>$29.99</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>100 Micron Mesh</td>
+            <td><a href="https://www.amazon.com/dp/B0CYT5XLXX">Amazon</a></td>
+            <td>$12.19</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>30 Micron Mesh</td>
+            <td><a href="https://www.amazon.com/dp/B0CYT4MG83">Amazon</a></td>
+            <td>$18.49</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>TDS meter</td>
+            <td><a href="https://www.amazon.com/dp/B08KXRHK7H">Amazon</a></td>
+            <td>$11.99</td>
+            <td>1</td>
+        </tr>
+    </table>
+</section>
+
+    
+    <section id="results">
+    <h2>6. Results</h2>
+    <p>In one of the adjusted trials using a higher concentration salt solution, the initial metal ion concentration was around 600 ppm. Over the course of the experiment, the concentration decreased to 565 ppm, with the majority of the change occurring within the first five minutes. After this point, the ppm level stabilized, indicating that the adsorption process had reached equilibrium as seen below in Figure 8. This result supports the observation that at higher initial concentrations, the rate of adsorption by the carbon material surpasses the rate of leaching, enabling a net reduction in total dissolved solids.</p>
+</section>
+
+<section id="timeline">
+    <h2>7. Timeline</h2>
+    <p>Over the course of the project, we followed a structured design and testing process to iteratively improve our water filtration system. Each milestone marked significant technical progress and insights gained, particularly in terms of sensor calibration, hardware design, and system integration. The following sections describe the work leading up to the specific milestone presentation; additionally, as seen in Figure 5, our initial planning of the project timeline was followed precisely and describes our game plans for the specified weeks.</p>
+    
+    <figure>
+        <img src="path-to-gantt-chart-figure" alt="GANTT Chart of Initial Plan">
+        <figcaption>Figure 9. GANTT Chart of Initial Plan</figcaption>
+    </figure>
+
+    <h3>Milestone 1: Preliminary Design</h3>
+    <p>We began by constructing a basic prototype using a plastic cup to simulate a water filter. This stage focused on developing a functional circuit involving the TDS sensor and peristaltic pump. While the system successfully circulated water, we encountered an unexpected issue: TDS values were rising instead of falling. This suggested that components in the setup may have been leaching contaminants, prompting further investigation.</p>
+
+    <h3>Milestone 2: Initial Prototype</h3>
+    <p>After spending much of the time between milestone 1 and 2 diagnosing the issue, we determined that activated carbon has a leakage threshold—a TDS point beyond which it begins releasing rather than absorbing impurities. We identified this threshold to be approximately 393.7 ppm for the specific carbon bath we used, and used it as a new benchmark for evaluating system performance. This key insight allowed us to better design and evaluate the filtering mechanism.</p>
+
+    <h3>Milestone 3: Intermediate Prototype</h3>
+    <p>We developed a 3D printed enclosure to house the circuit and pump more securely. This upgrade provided a more robust and portable platform for testing. During this stage, we reprocessed our carbon and updated the TDS threshold to 295.0 ppm, reflecting more accurate conditions for effective filtration.</p>
+
+    <h3>Milestone 4: Minimum Viable Product (MVP)</h3>
+    <p>The MVP stage marked major integration milestones. We 3D printed a final filter housing and implemented a live data plotting feature using the Arduino IDE’s serial plotter. Although this implementation still had bugs, it demonstrated real-time TDS data streaming and system responsiveness at a working threshold of 295.0 ppm.</p>
+
+    <h3>Milestone 5: Final Demo</h3>
+    <p>In preparation for the final demonstration, we replaced the old TDS sensor as the previous sensor had broken due to suspected overheating from a hot glue gun application; we also 3D printed holders to keep the sensor and circuitry securely in place rather than using hot glue as a result. Most importantly, we debugged and finalized the live data plotting functionality. Our final system operated with a refined threshold of 249.0 ppm, indicating improved filtration and more precise sensor response.</p>
+</section>
+
+<section id="future-considerations">
+    <h2>8. Future Considerations</h2>
+    <p>While our current water purification system effectively removes heavy metal ions using activated carbon filtration and monitors water quality through TDS measurements, several improvements could enhance its efficiency, automation, and applicability for real-world use.</p>
+
+    <h3>8.1 Integration of a pH Meter in the Input Stream</h3>
+    <p>Currently, the pH of the input water is manually tested before adding zinc sulfate, which introduces variability in the process. Incorporating a pH meter into the input mixing stream would allow for real-time monitoring and adjustments, ensuring that the initial water composition remains neutral or slightly acidic. This improvement would:</p>
+    <ul>
+        <li>Reduce manual intervention and improve consistency in water preparation.</li>
+        <li>Enable automated pH adjustments before filtration, optimizing the removal of metal ions.</li>
+        <li>Improve the applicability of the system for drinking water purification, as pH control is essential for safe consumption.</li>
+    </ul>
+
+    <h3>8.2 Expanded Contaminant Detection and Differentiation</h3>
+    <p>The current TDS meter measures overall conductivity but does not differentiate between specific ions or contaminants. Future improvements could include:</p>
+    <ul>
+        <li>Ion-selective sensors to identify specific heavy metals beyond zinc sulfate, such as lead or copper.</li>
+        <li>Multi-parameter water quality sensors to detect turbidity, dissolved oxygen, and organic contaminants, providing a more comprehensive assessment of water purity.</li>
+    </ul>
+
+    <h3>8.3 Automation and Smart Monitoring</h3>
+    <p>Enhancing the system with microcontroller-based automation could improve efficiency and ease of use. Potential upgrades include:</p>
+    <ul>
+        <li>Automated filtration control, where water is only released once the TDS and pH readings meet predefined safe levels.</li>
+        <li>Wireless monitoring via IoT integration, allowing remote tracking of water quality metrics.</li>
+        <li>Self-cleaning mechanisms for the activated carbon filter to extend its lifespan and maintain purification efficiency.</li>
+    </ul>
+
+    <h3>8.4 Scalability and Practical Applications</h3>
+    <p>For broader real-world implementation, the system could be scaled up for various applications:</p>
+    <ul>
+        <li>Portable water purification devices for emergency situations or rural areas.</li>
+        <li>Industrial wastewater treatment systems to remove heavy metal contaminants before discharge.</li>
+        <li>Integration into household filtration systems to provide an additional layer of protection against metal ions.</li>
+    </ul>
+
+    <p>By incorporating these improvements, our water purifier could evolve into a more advanced, user-friendly, and widely applicable solution for ensuring clean and safe drinking water.</p>
+</section>
+
+
+    </div>
+    <button id="backToTop" title="Go to top">↑ Top</button>
+<script>
+  // Show button after scrolling down
+  window.onscroll = function () {
+    const btn = document.getElementById("backToTop");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Smooth scroll to top
+  document.getElementById("backToTop").onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
+<footer style="background: #007acc; color: white; text-align: center; padding: 15px; margin-top: 20px;">
+        <p>© 2025 Penn Water Cleaners. All rights reserved.</p>
+        <a href="index.html" style="color: white; text-decoration: underline;">Back to Home</a>
+    </footer>
+</body>
+</html>
 
