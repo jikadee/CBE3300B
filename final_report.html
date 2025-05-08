@@ -170,18 +170,42 @@
 
             <h3>4.1 System Overview</h3>
             <p>This modular water purification system is engineered for the effective removal of heavy metal ions and other dissolved contaminants using activated charcoal as the primary filtration medium. The system adopts a gravity-driven, closed-loop design that integrates an Arduino microcontroller, a Total Dissolved Solids (TDS) sensor, and a peristaltic pump for automated monitoring and control. Water is introduced at the top of the assembly, flowing downward through a centrally aligned filter chamber filled with activated charcoal and finally collecting in the bottom chamber. Here, the TDS sensor evaluates water quality. If contaminant levels exceed a defined threshold, the microcontroller activates the pump to recirculate the water to the top chamber for additional purification cycles. This approach enhances purification efficiency while supporting a modular, scalable, and easily serviceable design.</p>
+            <figure style="text-align: center;">
+            <img src="images/figure1.png" alt="Figure 1" style="max-width:100%; height:auto; display:block; margin:auto;">
+            <figcaption>Figure 1. Overview Diagram of Water Purifier Assembly</figcaption>
+            </figure>
+
+            <figure style="text-align: center;">
+            <img src="images/figure2.jpg" alt="Figure 2" style="max-width:100%; height:auto; display:block; margin:auto;">
+            <figcaption>Figure 2. 3D Printed Filtration Unit</figcaption>
+            </figure>
 
             <h3>4.2 Top Chamber (Water Reservoir & Inlet System)</h3>
             <p>The top chamber serves as the initial entry point for untreated water and as the uppermost structural component of the system. It is designed with a funnel-shaped interior to promote a smooth, directed flow into the filter chamber while minimizing lateral leakage and splashback along the walls. At the bottom of this funnel, a fine mesh screen is mounted to provide foundational support for the charcoal media housed in the chamber below. This mesh allows water to pass freely while preventing particulate escape. The chamber also includes two precisely placed cutouts along its lower sidewalls, designed to accommodate the vertical support arms rising from the bottom chamber. These structural ports allow the entire unit to snap together via a friction-based click-lock system, enabling quick and secure assembly without adhesives or hardware. Together, these features allow the chamber to act as both a reservoir and a structural lid, maintaining system alignment and sealing performance during operation.</p>
 
+            <figure style="text-align: center;">
+            <img src="images/figure3.jpg" alt="Figure 3" style="max-width:100%; height:auto; display:block; margin:auto;">
+            <figcaption>Figure 3. Top Chamber CAD Model</figcaption>
+            </figure>
+            
             <h3>4.3 Filtration Unit (Activated Charcoal Housing)</h3>
             <p>The filter chamber is the functional core of the system, designed for both high-efficiency filtration and user-friendly maintenance. Its geometry narrows into a conical funnel at the base, guiding water downward through the charcoal bed while eliminating stagnation zones and potential backflow. Unlike traditional flat-bottom designs, the base of this chamber is recessed to nest directly above the bottom chamber, maximizing vertical space and allowing a larger reservoir capacity without increasing the overall system height.</p>
             <p>The filter chamber also includes two semicircular cutouts near its upper rim. One accommodates wiring from the TDS sensor, while the other allows for insertion of a recirculation tube connected to the peristaltic pump. These features make the chamber adaptable to dynamic experimental setups or longer-duration runs. Crucially, the filter chamber is designed for easy interchangeability of activated charcoal. The mesh base securely holds the charcoal in place, and the entire chamber can be detached from the system by simply lifting it out of the support arms. This allows for fast removal and replacement of used media without disturbing the rest of the assembly. Such modularity makes the design ideal for educational demonstrations, field testing, or iterative design validation.</p>
 
+            <figure style="text-align: center;">
+            <img src="images/figure4.jpg" alt="Figure 4" style="max-width:100%; height:auto; display:block; margin:auto;">
+            <figcaption>Figure 4. Filter Chamber CAD Model</figcaption>
+            </figure>
+            
             <h3>4.4 Bottom Chamber (Filtered Water Collection & TDS Measurement)</h3>
             <p>The bottom chamber functions as the final collection point for filtered water and the housing for the TDS sensor that monitors water quality. It is cylindrical in shape but features an internal taper that reduces the volume of material used during fabrication while retaining structural integrity. This makes the part lighter and more cost-effective to manufacture. Rising from the base are two integrated support arms, which insert into the corresponding ports in the top and filter chambers. These arms secure the vertical stack and ensure precise alignment of the filtration components.</p>
             <p>On the interior sidewall, a small holder is built into the print to stabilize the TDS sensor. This ensures consistent positioning of the probe, allowing for repeatable and accurate readings. After water passes through the charcoal media and mesh, it is collected in this chamber. The Arduino reads the real-time TDS value from the sensor and compares it against the desired water purity threshold. If necessary, the system initiates recirculation by pumping water back into the top chamber for additional passes through the filter. This looped design increases purification effectiveness and allows for automation and data logging. The chamber’s geometry ensures smooth flow collection and helps avoid dead zones where contaminants could accumulate.</p>
 
+            <figure style="text-align: center;">
+            <img src="images/figure5.jpg" alt="Figure 5" style="max-width:100%; height:auto; display:block; margin:auto;">
+            <figcaption>Figure 5. Bottom Chamber CAD Model</figcaption>
+            </figure>
+            
             <h3>4.5 Peristaltic Pump & Control System</h3>
             <p>The recirculation process is powered by a 12V DC peristaltic pump, which ensures a controlled and consistent flow rate through the filter. Connected via flexible silicon tubing, the pump maintains steady water movement to maximize filtration efficiency. The pump is regulated through an Arduino microcontroller using a MOSFET, diode, and resistor setup, which allows for precise flow adjustments via Pulse Width Modulation (PWM).</p>
 
@@ -193,6 +217,12 @@
             <p>The peristaltic pump control circuit manages the water flow rate through the activated charcoal filter, ensuring optimal contact time for effective filtration. This circuit includes a 12V DC power supply, a MOSFET transistor, and supporting resistor and diode components, allowing the Arduino to regulate the pump’s speed dynamically.</p>
             <p>Additionally, the microcontroller interface circuit processes sensor data, manages pump operation, and provides user feedback. Future enhancements may include an LCD display for real-time water quality readouts and a push-button interface for manual operation.</p>
             <p>This modular water purification system effectively removes ZnSO₄ contaminants by leveraging activated charcoal filtration, sensor-based monitoring, and controlled recirculation. Further enhancements such as additional sensors and smart monitoring allow for a system that can be scaled for broader applications in water purification, making it a viable solution for both small-scale and larger purification needs.</p>
+            
+            <figure style="text-align: center;">
+            <img src="images/figure6.jpg" alt="Figure 6" style="max-width:100%; height:auto; display:block; margin:auto;">
+            <figcaption>Figure 6. Circuit Diagram of Electronic Component</figcaption>
+            </figure>
+            
             <h3>4.8 Pseudocode</h3>
 
             <p>The following pseudocode outlines the logic implemented in the Arduino program used for automated water quality monitoring and pump control. This system uses a TDS (Total Dissolved Solids) sensor to measure water purity and activates a pump when the TDS level exceeds a predefined threshold. The code also incorporates signal filtering and temperature compensation to improve the accuracy of the readings.</p>
@@ -254,6 +284,10 @@
         <h3>4.9 Circuitry Housing</h3>
             <p>A custom circuitry housing was designed using Autodesk Fusion and 3D printed with a Bambu P1S printer. The enclosure features a rectangular box design with sliding top and front lids for easy access. A circular opening on the right wall accommodates the peristaltic pump, while outlet cutouts were added to the left wall for the Arduino board and to the top lid for the TDS sensor cable. To prevent short-circuiting from contact between electrical components, dedicated holders were created for both the battery and the TDS sensor board. The circuit board itself was securely mounted to the left wall using hot glue.</p>
     <section id="materials">
+        <figure style="text-align: center;">
+            <img src="images/figure7.png" alt="Figure 7" style="max-width:100%; height:auto; display:block; margin:auto;">
+            <figcaption>Figure 7. Housing for Electronic Components</figcaption>
+            </figure>
     <h2>5. Materials</h2>
     
     <h3>5.1 Major Components</h3>
@@ -411,6 +445,10 @@
     <h2>6. Results</h2>
     <p>In one of the adjusted trials using a higher concentration salt solution, the initial metal ion concentration was around 600 ppm. Over the course of the experiment, the concentration decreased to 565 ppm, with the majority of the change occurring within the first five minutes. After this point, the ppm level stabilized, indicating that the adsorption process had reached equilibrium as seen below in Figure 8. This result supports the observation that at higher initial concentrations, the rate of adsorption by the carbon material surpasses the rate of leaching, enabling a net reduction in total dissolved solids.</p>
 </section>
+            <figure style="text-align: center;">
+            <img src="images/figure8.jpg" alt="Figure 8" style="max-width:100%; height:auto; display:block; margin:auto;">
+            <figcaption>Figure 8. Plot of TDS Values vs Time through Filter</figcaption>
+            </figure>
 
 <section id="timeline">
     <h2>7. Timeline</h2>
@@ -420,7 +458,10 @@
         <img src="path-to-gantt-chart-figure" alt="GANTT Chart of Initial Plan">
         <figcaption>Figure 9. GANTT Chart of Initial Plan</figcaption>
     </figure>
-
+<figure style="text-align: center;">
+            <img src="images/figure9.png" alt="Figure 9" style="max-width:100%; height:auto; display:block; margin:auto;">
+            <figcaption>Figure 9. GANTT Chart of Initial Plan</figcaption>
+            </figure>
     <h3>Milestone 1: Preliminary Design</h3>
     <p>We began by constructing a basic prototype using a plastic cup to simulate a water filter. This stage focused on developing a functional circuit involving the TDS sensor and peristaltic pump. While the system successfully circulated water, we encountered an unexpected issue: TDS values were rising instead of falling. This suggested that components in the setup may have been leaching contaminants, prompting further investigation.</p>
 
